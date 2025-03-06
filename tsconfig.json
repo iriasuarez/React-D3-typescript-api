@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES2015",
+    "lib": ["ES2015", "DOM"],
+    "types": ["d3"],  
+    "typeRoots": ["node_modules/@types"]  
+  },
+  "include": ["src/**/*"]
+}
+
+  
