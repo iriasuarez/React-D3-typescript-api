@@ -11,17 +11,30 @@ This project visualizes Pokémon abilities and their corresponding attack stats 
 - **API Fetching**: Data for Pokémon attack abilities is fetched from an external API, using React Query for smooth and efficient handling.
 - **CSS**: To style the chart and ensure responsiveness.
 
+## Getting Started
 
-## 🚀 **Project Overview**
-This project is an animated chart that showcases Pokémon abilities to attack. It combines data from the Pokémon universe and visualizes it in a dynamic and engaging way, while maintaining accessibility for all users.
+These instructions will help you set up and run the project on your local machine for development.
 
-**Features:**
-- **Interactive Chart**: Users can view various Pokémon attack abilities.
-- **Animated Elements**: Smooth animations highlight the attack abilities.
-- **Efficient Data Fetching**: React Query handles data fetching and caching, ensuring optimal performance when displaying attack stats.
-- **Tooltips**: Hover over data points to view detailed information about specific Pokémon attack abilities.
+### Prerequisites
 
+Make sure you have the following installed:
+- Node.js (version 14 or higher)
+- npm or yarn
 
+### Installation
+
+Clone this repository:
+
+```bash
+git clone https://github.com/iriasuarez/React-D3-typescript-api.git
+
+npm install
+# or
+yarn install
+
+npm start
+# or
+yarn start
 
 
   
