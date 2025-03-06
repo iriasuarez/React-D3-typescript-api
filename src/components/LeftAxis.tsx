@@ -1,5 +1,3 @@
-import { ScaleBand } from "d3";
-
 interface LeftAxisProps {
   margins: {
     top: number;
@@ -7,13 +5,13 @@ interface LeftAxisProps {
     bottom: number;
     left: number;
   };
-  yScale: ScaleBand<string>;
+  yScale: any;
 }
 
 export function LeftAxis({ margins, yScale }: LeftAxisProps) {
   return (
     <g transform={`translate(0, ${margins.top})`}>
-      {yScale.domain().map((band: number) => (
+      {yScale.domain().map((band: string) => (
         <text
           key={band}
           transform={`translate(0, ${yScale(band) + yScale.bandwidth() / 2})`}

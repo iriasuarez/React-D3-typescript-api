@@ -1,5 +1,3 @@
-import { ScaleLinear } from "d3";
-
 interface BottomAxisProps {
   margins: {
     top: number;
@@ -7,7 +5,7 @@ interface BottomAxisProps {
     bottom: number;
     left: number;
   };
-  xScale: ScaleLinear<number, number>;
+  xScale: any;
   boundedHeight: number;
 }
 

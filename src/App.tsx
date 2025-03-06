@@ -5,6 +5,11 @@ import LoaderComponent from "././components/LoaderComponent";
 
 import "./styles.css";
 
+export interface DataItem {
+  name: string;
+  value: number;
+}
+
 const dimensions = {
   width: 500,
   height: 350,

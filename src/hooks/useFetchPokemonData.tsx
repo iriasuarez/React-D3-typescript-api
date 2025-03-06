@@ -1,9 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-
-export interface DataItem {
-  name: string;
-  value: number;
-}
+import { DataItem } from "../App";
 
 const fallbackData: DataItem[] = [
   { name: "East", value: 100 },

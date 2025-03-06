@@ -10,7 +10,7 @@ import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { BottomAxis } from "./BottomAxis";
 import { LeftAxis } from "./LeftAxis";
-import { DataItem } from "../useFetchPokemonData";
+import { DataItem } from "../App";
 
 interface ChartProps {
   data: DataItem[];
@@ -23,7 +23,7 @@ interface ChartProps {
   yAccessor: (d: DataItem) => string;
 }
 
-export const Chart = React.memo(
+export const Chart = React.memo<ChartProps>(
   ({ data, dimensions, xAccessor, yAccessor }: ChartProps) => {
     const { width, height, margins } = dimensions;
     const boundedWidth = width - margins.right - margins.left;
