@@ -53,6 +53,10 @@ export const Chart = React.memo<ChartProps>(
       .range([boundedHeight, 0])
       .padding(0.1);
 
+    const bandwidth = yScale.bandwidth();
+    const scaledX = (d: DataItem) => xScale(xAccessor(d));
+    const scaledY = (d: DataItem) => yScale(yAccessor(d));
+
     const colorPalette = [
       "#005f73",
       "#0a9396",
@@ -76,10 +80,10 @@ export const Chart = React.memo<ChartProps>(
           .transition()
           .duration(800)
           .ease(easeCubicInOut)
-          .attr("width", (d: DataItem) => xScale(xAccessor(d)))
+          .attr("width", (d: DataItem) => scaledX(d))
           .attr("fill", (d: DataItem) => colorScale(yAccessor(d)));
       }
-    }, [data, xScale, xAccessor, yAccessor, colorScale]);
+    }, [data, yAccessor, colorScale]);
 
     const handleMouseOver = useCallback(
       (
@@ -133,10 +137,10 @@ export const Chart = React.memo<ChartProps>(
               {data.map((datum, index) => (
                 <g
                   key={datum.name}
-                  transform={`translate(0, ${yScale(yAccessor(datum))})`}
+                  transform={`translate(0, ${scaledY(datum)})`}
                 >
                   <rect
-                    height={yScale.bandwidth()}
+                    height={bandwidth}
                     width={0}
                     fill={colorScale(yAccessor(datum))}
                     onMouseOver={(e) => handleMouseOver(e, datum)}
@@ -154,7 +158,7 @@ export const Chart = React.memo<ChartProps>(
                   <text
                     fontWeight="bolder"
                     dominantBaseline="hanging"
-                    transform={`translate(${xScale(xAccessor(datum)) + 4})`}
+                    transform={`translate(${scaledX(datum) + 4})`}
                     aria-hidden="true"
                   >
                     {xAccessor(datum)}
